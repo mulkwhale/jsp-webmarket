@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
+<%@ page import="java.util.Date" %>
+<%@ page import="java.text.SimpleDateFormat" %>
 <html>
 <head>
 <meta charset="EUC-KR">
@@ -43,6 +45,13 @@
 	        <h3>
 	        	<%= tagline %>
 	        </h3>
+	        <%
+	        Date today = new Date();
+	        
+	        SimpleDateFormat format = new SimpleDateFormat("hh:mm:ss a");
+	        
+	        out.println("현재 접속 시간: " + format.format(today));
+	        %>
 	    </div>
 	</div>
 	
