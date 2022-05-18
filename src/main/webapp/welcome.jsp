@@ -19,7 +19,7 @@
 	</nav>
 	<%!
 	// 변수, 메서드 선언. 전역 변수
-	String greeting = "Welcome to Web Shopping Mall";
+	String greeting = "웹 쇼핑몰에 오신 것을 환영합니다";
 	String tagline = "Welcome to Web Market!";
 	%>
 	<%
