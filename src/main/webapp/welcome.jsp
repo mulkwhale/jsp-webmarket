@@ -11,14 +11,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-	<nav class="navbar navbar-expand navbar-dark bg-dark">
-	    <div class="container">
-	        <div class="navbar-header">
-	        	<a class="navbar-brand" href="./welcome.jsp">Home</a>
-	        	<a class="navbar-brand" href="./welcome.jsp">Home</a>
-	        </div>
-	    </div>
-	</nav>
+	<jsp:include page="menu.jsp" />
 	<%!
 	// 변수, 메서드 선언. 전역 변수
 	String greeting = "웹 쇼핑몰에 오신 것을 환영합니다";
@@ -55,8 +48,6 @@
 	    </div>
 	</div>
 	
-	<footer class="container">
-		<p>&copy; WebMarket</p>
-	</footer>
+	<jsp:include page="footer.jsp" />
 </body>
 </html>

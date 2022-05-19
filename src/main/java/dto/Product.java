@@ -1,12 +1,8 @@
 package dto;
 
-import java.io.Serializable;
-
 // 모델 클래스
-// JSP : 자바빈즈 (getter/setter, 기본 생성자, Serializable)
-public class Product implements Serializable {
-	private static final long serialVersionUID = 2867748905925104542L;
-	
+// JSP : 자바빈즈 (getter/setter)
+public class Product{
 	private String productId;
 	private String name;
 	private int unitPrice;
@@ -16,9 +12,6 @@ public class Product implements Serializable {
 	private long unitsInStock;
 	private String condition;
 	
-	public Product() {}; // 빈 생성자
-	
-	// 기본 생성자 없어짐. 자바빈즈 기본 형태가 깨짐. 그래서 추가로 빈 생성자 만들어야 함
 	public Product(String productId, String name, int unitPrice) {
 		this.productId = productId;
 		this.name = name;
