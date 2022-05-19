@@ -15,15 +15,36 @@
 </head>
 <body>
 	<jsp:include page="menu.jsp" />
+	<div class="p-5 bg-primary text-white">
+	<!-- container : 좌우 가운데 정렬 -->
+    	<div class="container">
+    	<!-- display-3 : 큰 글자 중에 보통 크기 -->
+	        <h1 class="display-3">
+	        	상품 목록
+	        </h1>
+	    </div>
+	</div>
 	<%
 	//productRepository repository = new ProductRepository();
 	//useBean 없는 버전. 아래와 같음
 	List<Product> products = repository.getAllProducts();
-	for (Product product: products) {
-		out.println(product +"<br><br>");
-		// toString 재정의 돼있으면 .toString 생략 가능
-	}
+	
 	%>
+	<div class="container">
+	    <div class="row text-center">
+	    	<%
+	    	for (Product product: products) {
+	    	%>
+	    		<div class="col-md-4">
+	    			<h3><%= product.getName() %></h3>
+	    			<p><%= product.getDescription() %></p>
+	    			<p><%= product.getUnitPrice() %>원</p>
+	    		</div>
+	    	<%
+	    	}
+	    	%>
+	    </div>
+	</div>
 	<jsp:include page="footer.jsp" />
 </body>
 </html>
