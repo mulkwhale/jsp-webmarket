@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.List" %>
 <%@ page import="dto.Product" %>
-<jsp:useBean id="repository" class="dao.ProductRepository" scope="application" />
+<jsp:useBean id="repository" class="dao.ProductRepository" scope="session" />
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,7 +32,12 @@
 	    	<div class="col-md-6">
     			<h3><%= product.getName() %></h3>
     			<p><%= product.getDescription() %></p>
-    			<!-- 나머지는 책에 있음 p.174 -->
+    			<p> <b>상품 코드 : </b><span class="badge badge-danger">
+    			<%=product.getProductId()%></span></p>
+    			<p> <b>제조사</b> : <%=product.getManufacturer()%></p>
+    			<p> <b>분류</b> : <%=product.getCategory()%></p>
+    			<p> <b>재고 수</b> : <%=product.getUnitsInStock()%></p>
+    			<h4><%=product.getUnitPrice()%>원</h4>
     			<p>
     				<a href="#" class="btn btn-info">상품 주문 &raquo;</a>
 					<a href="./products.jsp" class="btn btn-secondary">상품 목록 &raquo;</a>

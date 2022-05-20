@@ -4,6 +4,7 @@
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.List" %>
 <%@ page import="dto.Product" %>
+<!-- session 서버측에 저장 -->
 <!DOCTYPE html>
 <html>
 <head>

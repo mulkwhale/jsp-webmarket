@@ -18,7 +18,7 @@ public class ProductRepository {
 		return instance;
 	}
 	
-	private ProductRepository() {
+	public ProductRepository() {
 		// 원래는 DB에서 가져올 데이터
 		// 지금 DB 안 배워서 그냥 3개 만든 것임
 		Product phone = new Product("P1234", "iPhone 6s", 800000);
