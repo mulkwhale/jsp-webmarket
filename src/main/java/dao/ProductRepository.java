@@ -11,7 +11,14 @@ public class ProductRepository {
 	// List를 ArrayList로 바꾸면 사용성에 제약 발생(다형성)
 	private List<Product> products = new ArrayList<>();
 	
-	public ProductRepository() {
+	// 하나의 객체를 생성 후 인스턴스를 재사용하는 싱글턴 패턴
+	private static ProductRepository instance = new ProductRepository();
+	
+	public static ProductRepository getInstance() {
+		return instance;
+	}
+	
+	private ProductRepository() {
 		// 원래는 DB에서 가져올 데이터
 		// 지금 DB 안 배워서 그냥 3개 만든 것임
 		Product phone = new Product("P1234", "iPhone 6s", 800000);
@@ -52,5 +59,10 @@ public class ProductRepository {
 				.filter((product) -> product.getProductId().equals(productId)) // 필요한 것 거르기
 				.findFirst() // 첫번째 것
 				.get(); // 얻어
+	}
+	
+	// 상품 추가
+	public void addProduct(Product product) {
+		products.add(product);
 	}
 }

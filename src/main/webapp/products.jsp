@@ -1,10 +1,8 @@
+<%@page import="dao.ProductRepository"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.List" %>
 <%@ page import="dto.Product" %>
-<!-- session은 서버측에 저장 -->
-<jsp:useBean id="repository" class="dao.ProductRepository" scope="application" />
-<!-- dao.ProductRepository 클래스를 여기서 repository라는 이름으로 쓰겠다. session은 범위. 죽을때까지 하나의 session으로 보겠다 -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,6 +13,7 @@
 </head>
 <body>
 	<jsp:include page="menu.jsp" />
+	
 	<div class="p-5 bg-primary text-white">
 	<!-- container : 좌우 가운데 정렬 -->
     	<div class="container">
@@ -25,8 +24,7 @@
 	    </div>
 	</div>
 	<%
-	//productRepository repository = new ProductRepository();
-	//useBean 없는 버전. 아래와 같음
+	ProductRepository repository = ProductRepository.getInstance();
 	List<Product> products = repository.getAllProducts();
 	
 	%>
