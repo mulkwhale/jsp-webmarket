@@ -1,3 +1,5 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -47,6 +49,17 @@
 	        SimpleDateFormat format = new SimpleDateFormat("hh:mm:ss a");
 	        
 	        out.println("현재 접속 시간: " + format.format(today));
+	        
+	        session.setAttribute("name", "김민정");
+	        session.setAttribute("age", 23);
+
+			List<String> foods = new ArrayList<>();
+			foods.add("짜장면");
+			foods.add("라면");
+			foods.add("탕수육");
+			
+			session.setAttribute("food", foods);
+			session.setMaxInactiveInterval(5);
 	        %>
 	    </div>
 	</div>
