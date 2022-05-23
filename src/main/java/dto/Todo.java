@@ -32,7 +32,7 @@ public class Todo {
 	public void setDone(boolean isDone) {
 		this.isDone = isDone;
 	}
-
+	
 	@Override
 	public String toString() {
 		return "Todo [id=" + id + ", task=" + task + ", isDone=" + isDone + "]";
