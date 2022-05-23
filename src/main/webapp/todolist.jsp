@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="assets/css/form.css" />
     <link rel="stylesheet" type="text/css" href="assets/css/todoitem.css" />
     <script src="assets/js/common.js"></script>>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <meta charset="UTF-8">
     <title>Todo List</title>
     <script>
@@ -17,7 +18,16 @@
       function addTodo() {
     	  console.log('클릭!!!!');
     	  // post 방식으로 processAddTodo.jsp?task=어쩌구(이건 get 방식. post는 body에 넣어서 보내야 됨)
-    	postData('processAddTodo.jsp', { task: 'test'});
+    	//postData('processAddTodo.jsp', { task: 'test'});
+    	  let task = $("#text").val();
+    	  $.ajax({
+    		  url: "processAddTodo.jsp",
+    		  type: "post",
+    		  data: { "task": task },
+    		  success: function (data) {
+    			  window.location.reload(); // 새로고침
+    		  }
+    	  });
       }
 
       function remove(id) {
