@@ -27,8 +27,7 @@
 
       function addTodo() {
     	  console.log('클릭!!!!');
-    	  // post 방식으로 processAddTodo.jsp?task=어쩌구(이건 get 방식. post는 body에 넣어서 보내야 됨)
-    	//postData('processAddTodo.jsp', { task: 'test'});
+    	  // post 방식으로 processAddTodo.jsp?task=어쩌구
     	  let task = $("#text").val();
     	  $.ajax({
     		  url: "processAddTodo.jsp",
